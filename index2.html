@@ -1,0 +1,79 @@
+<!--
+En el controlador se programa la logica de negocio.
+
+-->
+<!DOCTYPE html>
+<html ng-app="myApp" lang="es">
+<head>
+	<meta charset="UTF-8">
+	<title>Angular.js</title>
+	<script type="text/javascript" src="angular.min.js"></script>
+	<script>
+		
+	</script>
+</head>
+
+<body>
+
+
+
+<div><h2>Ejercicio No 1</h2>
+	<input type="text" ng-model="nombre" placeholder="Digite su Nombre">
+	<input type="text" ng-model="apellido" placeholder="Digite su Apellido"></br>
+	Hola: {{nombre +  " " + apellido}}
+</div>
+
+<hr>
+
+
+<div><h2>Ejercicio No 2</h2>
+	<input type="number" ng-model="numerador" placeholder="Digite un Numerador">
+	<input type="number" ng-model="denominador" placeholder="Digite un Denominador"></br>
+	<button ng-click="suma = numerador + denominador">Sumar</button>
+	La suma es: {{suma}}
+</div>
+
+<hr>
+	<div ng-app="myApp"><h2>Ejercicion No 3</h2>
+		<input type="text"  id="input1" ng-model="text" placeholder="Enter you input here...">
+		<p>{{ text }}</p>
+		<p ng-style = " text == (text | reverse) ? {color: 'red'} : {color: 'blue'}">{{ text | reverse }}</p>
+	</div>
+	<script>
+		var myApp = angular.module("myApp",[]);
+		myApp.filter("reverse", function() {
+			return function (input) {
+				return input.split("").reverse().join("");
+			};
+		});
+	</script>
+<hr>
+</div>
+</body>
+</html>
+
+<!--
+ng-app: 
+	Especifica la seccion del html en el cual se va a trabaja para luego enviar al controlador
+
+ng-model: 
+	Utilizada en los campos (Form) de entrada siempre que queramos que el usuario introduzca datos y tener acceso al valor de JavaScript
+
+ng-repeat: 
+	Permite que se repira tantas veces como se desee en el array
+
+
+
+
+<div ng-init="cantidad=1;precio=5">
+
+Conversos de Pesos a Dollar
+
+Numero de Dolares: <input type="number" ng-model="cantidad">
+
+Valor en Pesos: {{ cantidad * 3000 }}
+
+</div>
+
+
+-->
